@@ -1,0 +1,117 @@
+#1. soru
+gun=int(input("dogum gununuz:    "))
+ay=input("dogum ayiniz:   ")
+burc=input("burcunuz:   ")
+print(gun,ay,burc)
+if (gun>=21 and ay=="mart")or(gun<=20 and ay=="nisan"):
+    print("koc")
+elif (gun>=21 and ay=="nisan")or(gun<=20 and ay=="mayis"):
+    print("boga")
+elif (gun>=21 and ay=="mayis")or(gun<=20 and ay=="haziran"):
+    print("ikizler")
+elif (gun>=21 and ay=="haziran")or(gun<=20 and ay=="temmuz"):
+    print("yengec")
+elif (gun>=21 and ay=="temmuz")or(gun<=20 and ay=="agustos"):
+    print("aslan")
+elif (gun>=21 and ay=="agustos")or(gun<=20 and ay=="eylul"):
+    print("basak")
+elif (gun>=21 and ay=="eylul")or(gun<=20 and ay=="ekim"):
+    print("terazi")
+elif (gun>=21 and ay=="ekim")or(gun<=20 and ay=="kasim"):
+    print("akrep")
+elif (gun>=21 and ay=="kasim")or(gun<=20 and ay=="aralik"):
+    print("yay")
+elif (gun>=21 and ay=="aralik")or(gun<=20 and ay=="ocak"):
+    print("oglak")
+elif (gun>=21 and ay=="ocak")or(gun<=20 and ay=="subat"):
+    print("kova")
+elif (gun>=21 and ay=="subat")or(gun<=20 and ay=="mart"):
+    print("balik")
+else:
+    print(burc)
+
+#2. soru
+print("""islemler:
+1-km uzunlugu mile cevirme
+2-mil uzunlugu km ye cevirme
+""")
+a=1
+while a==1:
+    cevap=input("yapmak istediginiz islem numarasini girin(cikmak icin q ya basin):")
+    if cevap == "q":
+        print("cikiliyor...")
+        break
+    uzunluk=int(input("donusturulecek uzunlugu girin:  "))
+    if cevap == "1":
+        mil=uzunluk/1.6
+        print("girilen degerin mil cinsinden karsiligi:  ",mil)
+    elif cevap == "2":
+        km=uzunluk*1.6
+        print("girilen degerin km cinsinden karsiligi:  ",km)
+    else:
+        print("bir hata olustu","\n","lutfen tekrar deneyin")
+    
+#3. soru
+username=input("kullanici adiniz:   ")
+username_uzunluk=len(username)
+username_mesaj="usename toplam {} karakterden olusuyor!"
+print(username_mesaj.format(username_uzunluk))
+if username_uzunluk < 3:
+    print("usernama","toplam uzunlugu 3 karakterden fazla olmali!")
+elif username_uzunluk > 18:
+    print("username","toplam uzunlugu 18 karakterden az olmali!")
+parola=input("parolaniz:  ")
+parola_uzunluk=len(parola)
+parola_mesaj="parola toplam {} karakterden olusuyor!"
+print(parola_mesaj.format(parola_uzunluk))
+if (parola_uzunluk<=6) or (parola_uzunluk>=12):
+    print("parola","toplam uzunlugu 6 karakterden fazla olmali")
+dosya=open("kullaniciadiparola.txt","w")
+print(username,parola,file=dosya)
+    
+
+
+
+#4. soru
+
+sayi=7
+deneme=0
+tahmin=0
+while sayi!=tahmin :
+    tahmin = int(input("lutfen 1 ile 10 arasi bir sayi giriniz:"))
+    deneme+=1
+if deneme==1:
+    print("tebrikler *** kazandiniz...")
+elif deneme<=3:
+    print("tebrikler ** kazandiniz...")
+elif deneme<5:
+    print("tebrikler * kazandiniz...")
+else:
+    print("5 denemeden fazla sayi denediginiz icin yildiz kazanamadiniz...")
+
+#5. soru
+
+bakiye=1000
+menu="""yapmak istediginiz secimi giriniz:
+        1-bakiye kontrolu
+        2-para yatirma
+        3-para cekme
+        4-cikis"""
+kontrol=0
+while kontrol==0:
+    print(menu)
+    secim=int(input("secim:"))
+    if secim ==1:
+        print("toplam bakiyeniz:",bakiye,"euro'dur")
+    elif secim==2:
+        tutar=float(input("yatirmak istediginiz rakami giriniz:"))
+        bakiye+=tutar
+        print("tutar yatirildi. son bakiyeniz",bakiye,"euro'dur")
+    elif secim==3:
+        tutar=float(input("cekmek istediginiz tutari giriniz:"))
+        bakiye-=tutar
+        print("tutar cekildi.san bakiyeniz",bakiye,"euro'dur")
+    elif secim==4:
+        kontrol=1
+    else :
+            print("lutfen menudeki seceneklerden birini seciniz.")
